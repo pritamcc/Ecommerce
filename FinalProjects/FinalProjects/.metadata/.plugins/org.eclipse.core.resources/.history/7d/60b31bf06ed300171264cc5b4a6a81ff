@@ -1,0 +1,5 @@
+package com.ecom.DAOImplementation;
+
+public class ProductImpl implements ProductDAO {
+
+}

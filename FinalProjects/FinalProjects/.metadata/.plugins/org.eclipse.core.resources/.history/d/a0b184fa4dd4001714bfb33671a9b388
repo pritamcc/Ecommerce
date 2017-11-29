@@ -1,0 +1,50 @@
+package com.ecom.Controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ecom.DAO.ProductDAO;
+import com.ecom.Model.Product;
+
+@Controller
+public class ProductController {
+	
+	//injecting Dependecy
+	@Autowired
+	private ProductDAO productDAO;
+	
+/*	@RequestMapping("/ProductForm")
+	public String ProductForm(Model theModel)
+	{   
+		Product theProduct = new Product();
+		
+		theModel.addAttribute("addProduct", theProduct); 
+		
+		return "productform";
+	} */
+	
+	@RequestMapping("/ProductForm")
+	public String listProduct(Model theModel)
+	{  
+	    List<Product> theProducts = productDAO.getProducts();	
+	    
+	    theModel.addAttribute("products", theProducts);
+	    
+		return "productform";
+	}
+
+	 
+	 @RequestMapping("/saveProduct")
+	 public String saveProduct(@ModelAttribute("addProduct") Product theProdut)
+	 { 
+		 productDAO.addProducts(theProdut);  
+		 
+		 return "productform";
+	 }
+
+}

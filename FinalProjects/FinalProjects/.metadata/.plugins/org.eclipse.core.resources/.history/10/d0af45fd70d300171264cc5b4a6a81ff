@@ -1,0 +1,19 @@
+package com.ecom.DAOImplementation;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
+import com.ecom.DAO.ProductDAO;
+import com.ecom.Model.Product;
+
+@Repository
+public class ProductImpl implements ProductDAO {
+    
+	
+	@Transactional
+	public void addProduct(Product theProdut) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

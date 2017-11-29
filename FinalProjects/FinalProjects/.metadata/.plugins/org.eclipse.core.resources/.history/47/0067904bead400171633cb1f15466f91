@@ -1,0 +1,141 @@
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+      <style type="text/css">
+           .error{
+                 color:red;
+                }
+      </style>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Registration form</title>
+</head>
+<body>
+     <img src="D:\FinalProjects\EcommerceFrontend\src\main\resources\images\regbg.jpg"/>
+     <nav class="navbar-fixed-top">
+	     <div class="container-fluid border border-primary ">
+	              <ul class="nav justify-content-center navbar-light bg-light ">
+	                  <li class="nav-item">
+	                   <a class="nav-link active" href="/EcommerceFrontend">Home</a>
+	                   </li>
+	                   <li class="nav-item">
+	                   <a class="nav-link" href="#">Watches</a>
+	                   </li>
+	                   <li class="nav-item">
+	                   <a class="nav-link" href="#">Accesories</a>
+	                   </li>
+	                   <li class="nav-item">
+	                   <a class="nav-link " href="#">Contact-us</a>
+	                   </li>
+	               </ul>
+	        </div> 
+	      </nav>   
+
+   <!--  <div class="container">
+          <img src="D:\Projects\Ecommerce2\WebContent\resources\images\loginbg.jpg"  height="20%" width="00%"/>
+         </div> -->
+    
+    <br>
+    <a href="ProductForm">Add product</a>
+    <h3>Registration YourSelf</h3>
+    <p style="background-color:#E2E3E4">
+    Please take a minute to complete the following information. Registering your Timex will enable us to provide more efficient service if you ever have a question or problem.
+    <br>Please be assured that Timex will not share your information with any outside parties.
+    Thank you again for purchasing a Timex watch!
+    </p>
+    <hr>
+	<form:form action="saveCustomer" modelAttribute="customer" method="POST" >
+		<div class="form-group container-fluid">
+		<table>
+		   <tr>
+		       <td><label class="col-md-4 control-label">User Name</label></td>
+			   <td><form:input path="username" class="form-control input-md"/>
+			   <form:errors path="username" cssClass="error" />        
+			   </td>	
+		   </tr>		
+				
+            <br>
+            <label class="col-md-4 control-label">First Name</label>
+			<div class="col-md-4">
+				<form:input path="firstname" class="form-control input-md" />
+				<form:errors path="firstname" cssClass="error" />        
+            </div>
+            
+             <br>
+            <label class="col-md-4 control-label">Last Name</label>
+			<div class="col-md-4">
+				<form:input path="lastname" class="form-control input-md" />
+				<form:errors path="lastname" cssClass="error" />   
+            </div>
+           
+            <br>
+            <label class="col-md-4 control-label">Contact</label>
+			<div class="col-md-4">
+				<form:input path="contact" class="form-control input-md" />
+			     <form:errors path="contact" cssClass="error" />   
+            </div> 
+
+            <br>
+            <label class="col-md-4 control-label">Email</label>
+			<div class="col-md-4">
+				<form:input path="email" class="form-control input-md" />
+            </div>
+            
+            <br>
+            <label class="col-md-4 control-label">Country</label>
+			<div class="col-md-4">
+				<form:select path="country" class="form-control input-md">
+			     	<form:option value="India" label="India"></form:option>
+			     	<form:option value="Germany" label="Germany"></form:option>
+				    <form:option value="USA" label="USA"></form:option>
+				    <form:option value="Russia" label="Russia"></form:option>
+				</form:select>
+            </div>
+            
+            <br>
+            <label class="col-md-4 control-label">State</label>
+			<div class="col-md-4">
+				<form:select path="state" class="form-control input-md">
+				<form:option value="Maharashtra" label="Maharashtra"></form:option>
+				<form:option value="Gujrat" label="Gujrat"></form:option>
+				<form:option value="AndhraPradesh" label="AndhraPradesh"></form:option>
+				<form:option value="Punjab" label="Punjab"></form:option>
+				</form:select>
+            </div>
+            
+             <br>
+            <label class="col-md-4 control-label">Address</label>
+			<div class="col-md-4">
+				<form:textarea path="address" class="form-control input-md" />
+				<form:errors path="address" cssClass="error" /> 
+            </div>  
+            
+     <br>
+            <label class="col-md-4 control-label">Zipcode</label>
+			<div class="col-md-4">
+				<form:input path="zipcode" class="form-control input-md" />
+                <form:errors path="zipcode" cssClass="error" />  
+			 <br>
+            <label class="col-md-4 control-label"></label>
+			<div class="col-md-4">
+				<input type="submit" value="Submit" class="btn btn-success btn-lg">&nbsp;&nbsp;<input type="reset" value="Reset" class="btn btn-outline-danger btn-lg">
+            </div>
+			
+		</div>
+		</div>
+	
+	</form:form>
+	</table>
+</body>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" ></script>
+</html>

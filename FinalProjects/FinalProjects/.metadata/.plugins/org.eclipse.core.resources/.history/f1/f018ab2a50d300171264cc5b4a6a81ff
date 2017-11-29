@@ -1,0 +1,19 @@
+package com.ecom.Model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="product")
+public class Product {
+	  
+	  private int id;
+	  private String product_name;
+	  private String manufacturer;
+	  private int stock;
+	  private String description;
+	  
+	  
+	  
+
+}

@@ -1,0 +1,10 @@
+0:0:0:0:0:0:0:1 - - [19/Nov/2017:00:00:37 +0530] "POST /EcommerceFrontend/saveCustomer HTTP/1.1" 500 6047
+127.0.0.1 - - [19/Nov/2017:00:03:36 +0530] "GET / HTTP/1.1" 404 1073
+0:0:0:0:0:0:0:1 - - [19/Nov/2017:00:03:37 +0530] "GET /EcommerceFrontend/ HTTP/1.1" 200 4583
+0:0:0:0:0:0:0:1 - - [19/Nov/2017:00:03:39 +0530] "GET /EcommerceFrontend/registrationForm HTTP/1.1" 200 4615
+0:0:0:0:0:0:0:1 - - [19/Nov/2017:00:04:13 +0530] "POST /EcommerceFrontend/saveCustomer HTTP/1.1" 200 4583
+0:0:0:0:0:0:0:1 - - [19/Nov/2017:00:07:57 +0530] "GET /EcommerceFrontend/login HTTP/1.1" 200 3217
+127.0.0.1 - - [19/Nov/2017:11:19:42 +0530] "GET / HTTP/1.1" 404 1073
+0:0:0:0:0:0:0:1 - - [19/Nov/2017:11:19:44 +0530] "GET /EcommerceFrontend/ HTTP/1.1" 200 4583
+0:0:0:0:0:0:0:1 - - [19/Nov/2017:11:19:52 +0530] "GET /EcommerceFrontend/registrationForm HTTP/1.1" 200 4615
+0:0:0:0:0:0:0:1 - - [19/Nov/2017:11:20:28 +0530] "POST /EcommerceFrontend/saveCustomer HTTP/1.1" 200 4583

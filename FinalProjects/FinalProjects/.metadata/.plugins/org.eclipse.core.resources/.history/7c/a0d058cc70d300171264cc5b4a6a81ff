@@ -1,0 +1,16 @@
+package com.ecom.DAOImplementation;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ecom.DAO.ProductDAO;
+import com.ecom.Model.Product;
+
+@RequestMapping
+public class ProductImpl implements ProductDAO {
+
+	public void addProduct(Product theProdut) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
