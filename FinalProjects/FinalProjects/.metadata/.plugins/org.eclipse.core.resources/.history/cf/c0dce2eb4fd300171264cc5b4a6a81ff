@@ -1,9 +1,0 @@
-package com.ecom.Model;
-
-public class Product {
-	  private int id;
-	  private String product_name;
-	  private String manufacturer;
-	  
-
-}

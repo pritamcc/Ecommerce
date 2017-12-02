@@ -6,8 +6,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.springframework.context.annotation.ComponentScan;
+
 
 @Entity
 @Table(name="CustomerRegistration")
@@ -17,7 +20,7 @@ public class CustomerRegistration {
           
           @Column
           @Id
-          @GeneratedValue(strategy=GenerationType.SEQUENCE)
+          @GeneratedValue(strategy=GenerationType.AUTO)
           private int id;
           
 
@@ -28,7 +31,12 @@ public class CustomerRegistration {
           private String firstname;
 	      
           @Column
+          @NotNull
+          @Size(min=1,message="is required")
           private String lastname;
+          
+          @Column
+          private int password;
 	      
           @Column
           private String contact;
@@ -48,9 +56,6 @@ public class CustomerRegistration {
           
           @Column
           private String zipcode;
-
-
-          
 
 
 		public int getId() {
@@ -90,6 +95,15 @@ public class CustomerRegistration {
 
 		public void setLastname(String lastname) {
 			this.lastname = lastname;
+		}
+        
+
+		public void setPassword(int password) {
+			this.password = password;
+		}
+		
+		public int getPassword() {
+			return password;
 		}
 
 
@@ -153,13 +167,14 @@ public class CustomerRegistration {
 		}
 
 
-		public CustomerRegistration(int id, String username, String firstname, String lastname, String contact,
-				String email, String country, String state, String address, String zipcode) {
+		public CustomerRegistration(int id, String username, String firstname, String lastname, int password,
+				String contact, String email, String country, String state, String address, String zipcode) {
 			super();
 			this.id = id;
 			this.username = username;
 			this.firstname = firstname;
 			this.lastname = lastname;
+			this.password = password;
 			this.contact = contact;
 			this.email = email;
 			this.country = country;
@@ -167,18 +182,18 @@ public class CustomerRegistration {
 			this.address = address;
 			this.zipcode = zipcode;
 		}
-		
-		public CustomerRegistration()
-		{}
+
+        public  CustomerRegistration()
+        {}
 
 
 		@Override
 		public String toString() {
 			return "CustomerRegistration [id=" + id + ", username=" + username + ", firstname=" + firstname
-					+ ", lastname=" + lastname + ", contact=" + contact + ", email=" + email + ", country=" + country
-					+ ", state=" + state + ", address=" + address + ", zipcode=" + zipcode + "]";
+					+ ", lastname=" + lastname + ", password=" + password + ", contact=" + contact + ", email=" + email
+					+ ", country=" + country + ", state=" + state + ", address=" + address + ", zipcode=" + zipcode
+					+ "]";
 		}
-
         
           
           

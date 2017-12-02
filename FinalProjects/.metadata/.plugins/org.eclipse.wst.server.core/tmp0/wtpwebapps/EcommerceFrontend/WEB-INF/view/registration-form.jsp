@@ -7,18 +7,23 @@
 <head>
      <meta name="viewport" content="width=device-width, initial-scale=1">
 	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
-
+      <style type="text/css">
+           .error{
+                 color:red;
+                }
+      </style>
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Registration form</title>
 </head>
 <body>
+     <img src="D:\FinalProjects\EcommerceFrontend\src\main\resources\images\regbg.jpg"/>
      <nav class="navbar-fixed-top">
 	     <div class="container-fluid border border-primary ">
 	              <ul class="nav justify-content-center navbar-light bg-light ">
 	                  <li class="nav-item">
-	                   <a class="nav-link active" href="/Ecommerce_frontend">Home</a>
+	                   <a class="nav-link active" href="/EcommerceFrontend">Home</a>
 	                   </li>
 	                   <li class="nav-item">
 	                   <a class="nav-link" href="#">Watches</a>
@@ -38,30 +43,54 @@
          </div> -->
     
     <br>
+    <a href="ProductForm">Add product</a>
     <h3>Registration YourSelf</h3>
+    <p style="background-color:#E2E3E4">
+    Please take a minute to complete the following information. Registering your Timex will enable us to provide more efficient service if you ever have a question or problem.
+    <br>Please be assured that Timex will not share your information with any outside parties.
+    Thank you again for purchasing a Timex watch!
+    </p>
     <hr>
-	<form:form action="saveCustomer" modelAttribute="customer" method="POST">
+	<form:form action="saveCustomer" modelAttribute="customer" method="POST" >
 		<div class="form-group container-fluid">
 			<label class="col-md-4 control-label">User Name</label>
 			<div class="col-md-4">
-				<form:input path="username" class="form-control input-md" />
-            </div>
+				<form:input path="username" class="form-control input-md"/>
+				<form:errors path="username" cssClass="error" />        
+				</div>
             <br>
             <label class="col-md-4 control-label">First Name</label>
 			<div class="col-md-4">
 				<form:input path="firstname" class="form-control input-md" />
+				<form:errors path="firstname" cssClass="error" />        
             </div>
             
              <br>
             <label class="col-md-4 control-label">Last Name</label>
 			<div class="col-md-4">
 				<form:input path="lastname" class="form-control input-md" />
+				<form:errors path="lastname" cssClass="error" />   
+            </div>
+            
+               <br>
+            <label class="col-md-4 control-label">Password</label>
+			<div class="col-md-4">
+				<form:password path="password"  class="form-control input-md" />
+				<form:errors path="password" cssClass="error" />        
+            </div>
+            
+            <br>
+            <label class="col-md-4 control-label">First Name</label>
+			<div class="col-md-4">
+				<form:input path="firstname" class="form-control input-md" />
+				<form:errors path="firstname" cssClass="error" />        
             </div>
            
             <br>
             <label class="col-md-4 control-label">Contact</label>
 			<div class="col-md-4">
 				<form:input path="contact" class="form-control input-md" />
+			     <form:errors path="contact" cssClass="error" />   
             </div> 
 
             <br>
@@ -96,17 +125,18 @@
             <label class="col-md-4 control-label">Address</label>
 			<div class="col-md-4">
 				<form:textarea path="address" class="form-control input-md" />
+				<form:errors path="address" cssClass="error" /> 
             </div>  
             
      <br>
             <label class="col-md-4 control-label">Zipcode</label>
 			<div class="col-md-4">
 				<form:input path="zipcode" class="form-control input-md" />
-
+                <form:errors path="zipcode" cssClass="error" />  
 			 <br>
             <label class="col-md-4 control-label"></label>
 			<div class="col-md-4">
-				<input type="submit" value="Submit" class="btn btn-outline-success btn-lg">&nbsp;&nbsp;<input type="reset" value="Reset" class="btn btn-outline-danger btn-lg">
+				<input type="submit" value="Submit" class="btn btn-success btn-lg">&nbsp;&nbsp;<input type="reset" value="Reset" class="btn btn-outline-danger btn-lg">
             </div>
 			
 		</div>

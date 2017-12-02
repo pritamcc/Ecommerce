@@ -24,7 +24,7 @@ public class CustomerRegImpl implements CustomerRegDAO {
 		
 		currentSession.save(theCustomerRegistration);
 	
-		
+
 	}
       
 	

@@ -1,19 +1,18 @@
 package com.ecom.Controller;
 
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.ecom.DAO.CustomerRegDAO;
 import com.ecom.Model.CustomerRegistration;
-
-
-
 
 
     
@@ -34,12 +33,22 @@ public class CustomerRegController
 	 }
 	 
 	 @RequestMapping("/saveCustomer")
-	 public String saveCustomer(@ModelAttribute("customer")  CustomerRegistration theCustomerRegistration)
-	 {
-		customerRegDAO.saveCustomer(theCustomerRegistration);   
-		
-		 return "index";
+	 public String saveCustomer(
+			                    @Valid @ModelAttribute("customer")  CustomerRegistration theCustomerRegistration,
+			                     BindingResult theBindingResult)
+	 {   
+		   if(theBindingResult.hasErrors()) 
+		   {
+			   //redirect to registration page
+			   return "registration-form";
+		   }else
+				//saving customers
+			     customerRegDAO.saveCustomer(theCustomerRegistration);
+		       return "index";
+		   }
+
+     
+		  
 	 }  
 	  
 	
-}

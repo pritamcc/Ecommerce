@@ -28,6 +28,12 @@
 	                      width:25%;
 	                      margin:-1% 2% 0% 4%;
 	                   }
+	                   
+	                   .image
+	                      {
+	                   
+	                   
+	                        }
 
 	       </style>
 	   </head>
@@ -96,16 +102,19 @@
 </div>
 </div>
 <hr>
-	<div class="conatiner-fluid container">
-	   <img src="D:\Projects\Ecommerce\src\main\resources\images\men.jpg"  class="image" height="35%" width="30%">
-	    &nbsp;&nbsp;&nbsp;<img src="D:\Projects\Ecommerce\src\main\resources\images\women.jpg"  class="image" height="35%" width="30%">
-		 &nbsp;&nbsp;&nbsp;<img src="D:\Projects\Ecommerce\src\main\resources\images\kid.jpg"  class="image" height="35%" width="30%">
+  <div style="background-color:#E2E3E4">
+	<div class="container" >
+	   <img src="D:\Projects\Ecommerce\src\main\resources\images\men.jpg"  class="image img-thumbnail" height="35%" width="30%">
+	    &nbsp;&nbsp;&nbsp;<img src="D:\Projects\Ecommerce\src\main\resources\images\women.jpg"  class="image img-thumbnail" height="35%" width="30%">
+		 &nbsp;&nbsp;&nbsp;<img src="D:\Projects\Ecommerce\src\main\resources\images\kid.jpg"  class="image img-thumbnail" height="35%" width="30%">
        <div class="middle">
        <div class="text">Men</div>
        </div>
 	
 	</div>
-	<div class="container-fluid">
+	</div>
+	<div class="container-fluid" style="background-color:#003366" >
+	   Information
 	   
 	</div>
 	  

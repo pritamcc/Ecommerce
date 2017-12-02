@@ -17,6 +17,7 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.ecom.Model.CustomerRegistration;
+import com.ecom.Model.Product;
 
 
 @Configuration
@@ -49,6 +50,7 @@ public class ApplicationContextConfig {
 		LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
 		sessionBuilder.addProperties(getHibernateProperties());
 		sessionBuilder.addAnnotatedClasses(CustomerRegistration.class);
+		sessionBuilder.addAnnotatedClasses(Product.class);
 		return sessionBuilder.buildSessionFactory();
 	}
 
