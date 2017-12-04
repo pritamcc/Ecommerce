@@ -32,11 +32,10 @@ public class CustomerRegistration {
 	      
           @Column
           @NotNull
-          @Size(min=1,message="is required")
           private String lastname;
           
           @Column
-          private int password;
+          private String password;
 	      
           @Column
           private String contact;
@@ -98,11 +97,11 @@ public class CustomerRegistration {
 		}
         
 
-		public void setPassword(int password) {
+		public void setPassword(String password) {
 			this.password = password;
 		}
 		
-		public int getPassword() {
+		public String getPassword() {
 			return password;
 		}
 
@@ -167,7 +166,7 @@ public class CustomerRegistration {
 		}
 
 
-		public CustomerRegistration(int id, String username, String firstname, String lastname, int password,
+		public CustomerRegistration(int id, String username, String firstname, String lastname, String password,
 				String contact, String email, String country, String state, String address, String zipcode) {
 			super();
 			this.id = id;

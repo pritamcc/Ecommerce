@@ -79,12 +79,6 @@
 				<form:errors path="password" cssClass="error" />        
             </div>
             
-            <br>
-            <label class="col-md-4 control-label">First Name</label>
-			<div class="col-md-4">
-				<form:input path="firstname" class="form-control input-md" />
-				<form:errors path="firstname" cssClass="error" />        
-            </div>
            
             <br>
             <label class="col-md-4 control-label">Contact</label>

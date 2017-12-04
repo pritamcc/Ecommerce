@@ -1,0 +1,38 @@
+package com.ecom.DAOImplementation;
+
+
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import com.ecom.DAO.ProductDAO;
+import com.ecom.Model.Product;
+
+@Repository("ProductDAO")
+public class ProductImpl implements ProductDAO {
+     
+	  @Autowired
+	  private SessionFactory sessionFactory;
+	  
+	  public List<Product> getProducts() {
+		  Session currentSession = sessionFactory.getCurrentSession();
+			return null;
+		}
+	  
+	  
+     @javax.transaction.Transactional
+	public void addProducts(Product theProdut) 
+	{
+	    Session currentSession = sessionFactory.getCurrentSession();	
+		
+	    System.out.println("Adding Product");
+	    currentSession.save(theProdut);
+	    System.out.println("Success");
+	}
+
+	
+
+}

@@ -1,0 +1,4 @@
+127.0.0.1 - - [04/Dec/2017:10:27:09 +0530] "GET / HTTP/1.1" 404 1073
+0:0:0:0:0:0:0:1 - - [04/Dec/2017:10:27:11 +0530] "GET /EcommerceFrontend/ HTTP/1.1" 200 4860
+0:0:0:0:0:0:0:1 - - [04/Dec/2017:10:27:15 +0530] "GET /EcommerceFrontend/registrationForm HTTP/1.1" 200 5572
+0:0:0:0:0:0:0:1 - - [04/Dec/2017:10:27:23 +0530] "GET /EcommerceFrontend/ProductForm HTTP/1.1" 200 3527

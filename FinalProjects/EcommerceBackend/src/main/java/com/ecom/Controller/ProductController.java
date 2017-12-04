@@ -1,0 +1,58 @@
+package com.ecom.Controller;
+
+import java.util.List;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ecom.DAO.ProductDAO;
+import com.ecom.Model.Product;
+
+@Controller
+public class ProductController {
+	
+	//injecting Dependecy
+	@Autowired
+	private ProductDAO productDAO;
+	
+    @RequestMapping("/ProductList")
+	public String  ListProducts(Model theModel)
+	{
+		List<Product> theProducts = productDAO.getAllProduct();
+		theModel.addAttribute("products",theProducts);
+		System.out.println("\n"+theProducts);
+		return "productlist";
+		}
+	
+    @RequestMapping("/ProductForm")
+	public String ProductForm(Model theModel)
+	{   
+		 Product theProduct = new Product();
+		 
+		 theModel.addAttribute("addProduct", theProduct);
+        
+		 
+		 return "productform";
+	} 
+	
+	 @RequestMapping("/saveProduct")
+	 public String saveProduct(@Valid @ModelAttribute("addProduct") Product theProdut,
+			                   BindingResult theBindingResult)
+	 {   
+		 if(theBindingResult.hasErrors())
+		 {  
+			 System.out.println("Error"); 
+			 return "productform";
+		 }
+		 productDAO.addProducts(theProdut);  
+		 
+		 return "productform";
+	 }
+
+}

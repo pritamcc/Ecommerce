@@ -14,6 +14,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\FinalProjects\solution-code-spring-security-demo-03-custom-login-form"/>
 			<item value="D:\solution-code-spring-mvc-validation-required-fields"/>
 			<item value="D:\FinalProjects\solution-code-spring-mvc-validation-required-fields"/>
 			<item value="D:\FinalProjects\EcommerceFrontend"/>

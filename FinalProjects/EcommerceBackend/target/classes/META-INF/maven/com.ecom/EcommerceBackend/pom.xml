@@ -14,6 +14,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <org.springframework.version>4.3.10.RELEASE</org.springframework.version>
 	<hibernate.version>5.2.10.Final</hibernate.version>
+	<springsecurity.version>4.2.3.RELEASE</springsecurity.version>
   </properties>
   
    <dependencies>
@@ -53,14 +54,37 @@
 		<version>${org.springframework.version}</version>
 	</dependency>
 
-	<!-- Hibernate resources -->
+	<!-- Spring Security -->
+	<!-- spring-security-web and spring-security-config -->
+	<dependency>
+		<groupId>org.springframework.security</groupId>
+		<artifactId>spring-security-web</artifactId>
+		<version>${springsecurity.version}</version>
+	</dependency>
 
-	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+	<dependency>
+		<groupId>org.springframework.security</groupId>
+		<artifactId>spring-security-config</artifactId>
+		<version>${springsecurity.version}</version>
+	</dependency>
+	
+
+	<!-- Hibernate resources -->
+    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
 <dependency>
-    <groupId>org.hibernate</groupId>
-    <artifactId>hibernate-validator</artifactId>
-    <version>5.4.1.Final</version>
+	<groupId>org.hibernate</groupId>
+	<artifactId>hibernate-validator</artifactId>
+	<version>5.3.4.Final</version>
 </dependency>
+
+	<!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+	<dependency>
+		<groupId>javax.validation</groupId>
+		<artifactId>validation-api</artifactId>
+		<version>1.1.0.Final</version>
+	</dependency>
+
+    
 
 <!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
 <dependency>

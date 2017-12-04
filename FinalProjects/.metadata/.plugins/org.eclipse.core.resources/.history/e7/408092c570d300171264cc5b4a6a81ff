@@ -1,0 +1,13 @@
+package com.ecom.DAOImplementation;
+
+import com.ecom.DAO.ProductDAO;
+import com.ecom.Model.Product;
+
+public class ProductImpl implements ProductDAO {
+
+	public void addProduct(Product theProdut) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
