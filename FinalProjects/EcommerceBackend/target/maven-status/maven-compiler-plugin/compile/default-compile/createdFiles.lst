@@ -1,5 +1,0 @@
-com\ecom\EcommerceBackend\App.class
-com\ecom\Config\ApplicationContextConfig.class
-com\ecom\Model\CustomerRegistration.class
-com\ecom\Controller\HomeController.class
-com\ecom\Model\Login.class
