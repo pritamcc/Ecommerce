@@ -48,8 +48,6 @@ public class Customer {
 	private ShippingAddress shippingAddress;
 	
 	
-    
-
 	public int getCustomerId() {
 		return customerId;
 	}

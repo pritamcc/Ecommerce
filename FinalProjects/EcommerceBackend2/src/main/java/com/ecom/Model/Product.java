@@ -7,7 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.Min;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
 
@@ -21,6 +23,7 @@ public class Product {
       @GeneratedValue(strategy=GenerationType.AUTO)
 	  private int id;
       
+      @NotEmpty(message ="The product name must not be null")
       @Column(name="product_name")
 	  private String productname;
       
@@ -30,17 +33,21 @@ public class Product {
       @Column(name="category")
       private String category;
     
+      @Min(value=0, message="The product stock must not be less than zero")
       @Column(name="stock")
       private int stock;
       
       @Column(name="Description")
       private String description;
       
+      @Min(value= 0, message="The product price must not be less than zero")
       @Column(name="price")
       private int price;
       
       @Transient
       private MultipartFile productImage; 
+
+	
 
 	public int getId() {
 		return id;
@@ -105,6 +112,9 @@ public class Product {
 	public void setProductImage(MultipartFile productImage) {
 		this.productImage = productImage;
 	}
+
+	
+
 	
 	
 }

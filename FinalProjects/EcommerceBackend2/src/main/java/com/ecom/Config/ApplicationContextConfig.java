@@ -18,6 +18,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.ecom.Model.Authorities;
 import com.ecom.Model.BillingAddress;
+import com.ecom.Model.Cart;
+import com.ecom.Model.CartItem;
 import com.ecom.Model.Customer;
 import com.ecom.Model.Product;
 import com.ecom.Model.ShippingAddress;
@@ -32,7 +34,7 @@ public class ApplicationContextConfig {
 	public DataSource getH2DataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("org.h2.Driver");
-		dataSource.setUrl("jdbc:h2:tcp://localhost/~/test5");
+		dataSource.setUrl("jdbc:h2:tcp://localhost/~/ecomdb");
 		dataSource.setUsername("sa");
 		dataSource.setPassword("");
 		return dataSource;
@@ -59,6 +61,8 @@ public class ApplicationContextConfig {
 		sessionBuilder.addAnnotatedClasses(BillingAddress.class);
 		sessionBuilder.addAnnotatedClasses(Authorities.class);
 		sessionBuilder.addAnnotatedClasses(Product.class);
+		sessionBuilder.addAnnotatedClasses(Cart.class);
+		sessionBuilder.addAnnotatedClasses(CartItem.class);
 		return sessionBuilder.buildSessionFactory();
 	}
 

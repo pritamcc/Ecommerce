@@ -25,7 +25,7 @@
 	  method="POST" enctype="multipart/form-data">
 		<table>
 			<tr>
-				<td><label>Product Name:</label></td>
+				<td><label>Product Name:</label></td><form:errors path="productname" cssStyle="color:#ff0000"/>
 				<td><form:input path="productname" class="form-control" /></td>
 				&nbsp;&nbsp;
 				<td><label>Manufacturer:</label></td>
@@ -35,7 +35,7 @@
 				<td><label>category:</label></td>
 				<td><form:input path="category" class="form-control" /></td>
 				&nbsp;&nbsp;
-				<td><label>Stock:</label></td>
+				<td><label>Stock:</label></td><form:errors path="stock" cssStyle="color:#ff00000"/>
 				<td><form:input path="stock" class="form-control" /></td>
 			</tr>
 			<tr>
@@ -43,7 +43,7 @@
 				<td><form:textarea path="description" class="form-control" /></td>
 				&nbsp;&nbsp;
 
-				<td><label>Price:</label></td>
+				<td><label>Price:</label></td><form:errors path="price" cssStyle="color:#ff00000"/>
 				<td><form:textarea path="price" class="form-control" /></td>
 			</tr>
 			<tr>

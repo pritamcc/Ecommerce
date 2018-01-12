@@ -1,0 +1,22 @@
+package com.ecom.DAOImpl;
+
+import javax.transaction.Transactional;
+
+import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Repository;
+
+
+import com.ecom.DAO.CustomerDAO;
+import com.ecom.Model.Customer;
+
+@Repository
+public class CustomerDaoImpl implements CustomerDAO {
+    
+	private SessionFactory sessionFactory; 
+	@Transactional
+	public void addCustomer(Customer theCustomer) {
+		
+		
+	}
+
+}

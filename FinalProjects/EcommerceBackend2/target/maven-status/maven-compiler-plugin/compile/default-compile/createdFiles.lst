@@ -9,7 +9,9 @@ com\ecom\Controller\CustomerRegController.class
 com\ecom\DAOImpl\CustomerDaoImpl.class
 com\ecom\Model\ShippingAddress.class
 com\ecom\Config\ApplicationContextConfig.class
+com\ecom\Controller\LoginController.class
 com\ecom\Model\Product.class
 com\ecom\Model\BillingAddress.class
 com\ecom\EcommerceBackend2\App.class
 com\ecom\Model\Login.class
+com\ecom\Controller\AdminController.class

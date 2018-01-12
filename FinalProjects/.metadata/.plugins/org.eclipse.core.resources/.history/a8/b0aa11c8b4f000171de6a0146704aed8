@@ -1,0 +1,18 @@
+package com.ecom.DAO;
+
+import java.util.List;
+
+import com.ecom.Model.Cart;
+
+
+
+public interface CartDAO {
+	
+	public List<Cart> list(String user_id);
+	public Double getTotalAmount(String id);
+	public boolean save(Cart cart);
+	public Cart get(int id);
+	
+	
+
+}

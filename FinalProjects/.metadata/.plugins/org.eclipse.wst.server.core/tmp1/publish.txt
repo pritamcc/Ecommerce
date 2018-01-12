@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Tue Jan 09 00:13:24 IST 2018
+org.eclipse.jst.j2ee.server\:/binary\:C\:\\Users\\Pritam\\.m2\\repository\\org\\springframework\\spring-web\\4.3.10.RELEASE\\spring-web-4.3.10.RELEASE.jar=WEB-INF/lib/spring-web-4.3.10.RELEASE.jar
+org.eclipse.jst.j2ee.server\:EcommerceBackend3=WEB-INF/lib/EcommerceBackend2-0.0.1-SNAPSHOT.jar

@@ -1,0 +1,18 @@
+package com.ecom.DAOImpl;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.ecom.DAO.CustomerDAO;
+import com.ecom.Model.Customer;
+
+@Repository
+public class CustomerDaoImpl implements CustomerDAO {
+    
+	@Transactional
+	public void addCustomer(Customer theCustomer) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

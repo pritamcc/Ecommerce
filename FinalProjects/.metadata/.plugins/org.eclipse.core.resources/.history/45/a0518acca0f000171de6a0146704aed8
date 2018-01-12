@@ -1,0 +1,14 @@
+package com.ecom.Controller;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+
+import com.project.controllers.CartController;
+
+@Controller
+public class CartController {
+	private static final String user_id = null;
+	Logger log = LoggerFactory.getLogger(CartController.class);
+
+}

@@ -15,6 +15,11 @@
 	<h3>Administrator page</h3>
 	This is the administrator  page
 	<hr>
+	<c:if test="${pageContext.request.userPrincipal.name != null}">
+	        <h2>
+	            Welcom:${pageContext.request.userPrincipal.name}|<a href="<c:url value="/login?logout"/>">Logout</a>
+	        </h2>
+	</c:if>
 	<h3>
 	<a href='<c:url value="/admin/productInventory"/>'>Product Inventory</a>
 	</h3>

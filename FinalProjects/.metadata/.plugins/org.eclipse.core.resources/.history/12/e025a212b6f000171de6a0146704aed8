@@ -1,0 +1,136 @@
+package com.ecom.Controller;
+
+import java.sql.Date;
+import java.util.Collection;
+
+import javax.servlet.http.HttpSession;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.ecom.DAO.CartDAO;
+import com.ecom.DAO.ProductDAO;
+import com.ecom.Model.Cart;
+import com.ecom.Model.Product;
+
+@Controller
+public class CartController {
+	private static final String user_id = null;
+	Logger log = LoggerFactory.getLogger(CartController.class);
+	
+	@Autowired
+	private CartDAO cartDAO;
+	
+	@Autowired
+	private ProductDAO productDAO;
+	
+	@Autowired
+	private Cart cart;
+	
+	@Autowired
+	private HttpSession session;
+	
+	@RequestMapping(value = "/cart", method = RequestMethod.GET)
+	public String myCart(Model model) {
+		log.debug("Starting of the method cart");
+		//model.addAttribute("cart", cart);
+		// get the logged-in user id 
+		//if you added the loggedInUserID in session
+		String loggedInUserid = (String) session.getAttribute("loggedInUserID");
+
+		if (loggedInUserid == null) {
+			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+			loggedInUserid = auth.getName();
+			Collection<GrantedAuthority> authorities = (Collection<GrantedAuthority>)   auth.getAuthorities();
+			authorities.contains("ROLE_USER");
+			
+		}
+		if(loggedInUserid!=null)
+		{
+
+		int cartSize = cartDAO.list(loggedInUserid).size();
+		// List<Cart> cartList=cartDAO.list(loggedInUserid);
+		if (cartSize == 0) {
+			log.debug("cartSize == 0");
+			model.addAttribute("errorMessage", "You do not have any products in your Cart");
+		} else {
+			log.debug("cartSize != 0");
+			session.setAttribute("cartSize",cartSize);
+		
+			model.addAttribute("cartList", cartDAO.list(loggedInUserid));
+			model.addAttribute("totalAmount", cartDAO.getTotalAmount(loggedInUserid));
+			model.addAttribute("isUserClickedCart", "true");
+			model.addAttribute("cart",cart);
+
+		}
+		
+		}
+		log.debug("Ending of the method cart");
+		return "Cart";
+	}
+	
+	 @RequestMapping(value="")
+	 public ModelAndView addToCart(@PathVariable("id") int theId)
+	 {
+		 log.debug("Starting of the method addToCart");
+		// get the product based on product id
+		 
+		 Product product = productDAO.getProductbyId(theId);
+		 cart.setPrice(product.getPrice());
+		 cart.setProduct_name(product.getProductname());
+		 cart.setProduct_id(product.getId());
+		 String loggedInUserid = (String) session.getAttribute("loggedInUserID");
+		 if (loggedInUserid == null)
+		 {
+			 Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+			 loggedInUserid = auth.getName();
+		 }
+		 cart.setUser_id(loggedInUserid);
+		 cart.setStatus("New");
+		 
+		 cart.setQuantity(1);
+		 cart.setDateAdded(new Date(System.currentTimeMillis()));
+		 
+		 cartDAO.save(cart);
+		 
+		 ModelAndView mv = new ModelAndView("index");
+		 mv.addObject("successMessage","Successfuly add the product to cart");
+		 log.debug("Ending of the method addToCart");
+		 return mv;
+		 
+	 }
+	 
+	 @GetMapping("")
+	 public ModelAndView deleteFromCart(@PathVariable("id") int id)
+	 {
+		 log.debug("Starting of the deletion of cart");
+	     log.debug("You are going to delete :" +id); 
+	     ModelAndView mv=new ModelAndView("index");
+	     
+	     Cart cart = cartDAO.get(id);
+	     if(cartDAO.delete(cart))
+	     {
+	    	 log.debug("Deleteion of cart successfully ");
+	    	 mv.addObject("message","Successfully deleted cart");
+	     }else
+			{
+				log.debug(" Detetion of cart failed");
+				mv.addObject("message", "Unable to delete the cart");
+			}
+	     log.debug("Ending of the deletion of cart");
+		return mv;
+	     
+	 }
+
+}

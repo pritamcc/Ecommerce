@@ -1,0 +1,22 @@
+package com.ecom.DAOImpl;
+
+import java.util.List;
+
+import com.ecom.DAO.CartDAO;
+import com.ecom.Model.Cart;
+
+public class CartDAOImpl implements CartDAO {
+
+	public List<Cart> list(String user_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	public Double getTotalAmount(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+}

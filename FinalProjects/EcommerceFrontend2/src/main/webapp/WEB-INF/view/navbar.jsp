@@ -3,6 +3,7 @@
 	uri="http://www.springframework.org/security/tags"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ page isELIgnored="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -15,10 +16,9 @@
 <%--    <!-- Main CSS -->
     <link href="<c:url value="/resource/css/main.css" />" rel="stylesheet"> --%>
 <title></title>
-
-<script src="https://use.fontawesome.com/512e7150fb.js">
-</script>
-
+<script src="https://use.fontawesome.com/512e7150fb.js"/>
+<!-- Angular JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js" > </script>
 </head>
 
 <body>
@@ -48,12 +48,12 @@
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 
-			<li><a href="login" style="color: black">Sign in</a></li>&nbsp;&nbsp;|
+			<li><a href="<c:url value="/login"/>" style="color: black">Sign in</a></li>&nbsp;&nbsp;|
 
 			<li><a href="<c:url value="/registrationForm"/>"
 				style="color: black"><i class="fa fa-user-plus fa-1x"
 					aria-hidden="true"></i>Sign up</a></li>|&nbsp;&nbsp;
-			<li><a href="login" style="color: black"><i
+			<li><a href="<c:url value="/admin"/>" style="color: black"><i
 					class="fa fa-lock fa-1x" aria-hidden="true"></i>Admin</a></li>
 		</ul>
 

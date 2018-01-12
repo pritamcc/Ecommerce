@@ -1,0 +1,54 @@
+package com.ecom.DAOImpl;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.ecom.DAO.CartDAO;
+import com.ecom.Model.Cart;
+
+@Repository
+public class CartDAOImpl implements CartDAO {
+	public static Logger log = LoggerFactory.getLogger(CartDAOImpl.class);
+    
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	@Transactional
+	public List<Cart> list(String user_id) {
+		log.debug("Starting of the method list");
+
+		Session currentSession = sessionFactory.getCurrentSession();
+		Query<Cart> theQuery = currentSession.createQuery("from Cart where user_id='" + user_id + "'  and status = " + "'New'",Cart.class);
+	    List<Cart> Cart = theQuery.getResultList();
+		return Cart;
+	}
+
+	@Transactional
+	public Double getTotalAmount(String id) {
+		log.debug("Starting of the method getTotalAmount");
+		String hql = "select sum(price*quantity) from Cart where user_id=" + "'" + user_id + "'" + "  and status = " + "'New'";
+		log.debug("hql" + hql);
+
+		Query query = sessionFactory.openSession().createQuery(hql);
+		log.debug("Ending of the method getTotalAmount");
+		return (Double) query.uniqueResult();
+	}
+     
+	@Transactional
+	public boolean save(Cart cart) {
+		
+		Session currentSession = sessionFactory.getCurrentSession();
+		currentSession.save(cart);
+		return true;
+	}
+
+	
+}
