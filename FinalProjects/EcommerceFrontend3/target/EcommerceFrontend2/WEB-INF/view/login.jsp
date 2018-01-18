@@ -17,8 +17,8 @@
 <body>
 	<%@ include file="navbar.jsp"%>
 	<div>
-		<div>
-			<div id="login-box">
+		<div class="container" width="50%" height="50%">
+			<div id="login-box" class="container-fluid" >
 				<h3>Login</h3>
 				<form:form
 					action="${pageContext.request.contextPath}/authenticateTheUser"
@@ -27,9 +27,11 @@
 					<!-- Check for login error -->
 
 					<c:if test="${param.error != null}">
-
+                         <div class="alert alert-danger col-xs-offset-1 col-xs-10">
+					       You have been Logged out
 						<i class="failed">Sorry! You entered invalid
 							username/password.</i>
+						</div>	
 					</c:if>
 					
 					<c:if test="${param.logout != null}">
@@ -38,12 +40,12 @@
 					       </div>
 					</c:if>
 					<div class="form-group">
-						<label>User name:</label> <input type="text" id="username"
-							name="username" class="form-control" required="required"/>
+						<label class="">User name:</label> <input type="email" id="username"
+							name="username" class="form-control mx-sm-3" required="required"/>
 					</div>
 					<div class="form-group">
 						<label>Password</label> <input
-							type="password" id="password" name="password" class="form-control" 
+							type="password" id="password" name="password" class="form-control mx-sm-3" 
 							placeholder="Password" required="required">
 					</div>
 					<input type="submit" value="Login" />

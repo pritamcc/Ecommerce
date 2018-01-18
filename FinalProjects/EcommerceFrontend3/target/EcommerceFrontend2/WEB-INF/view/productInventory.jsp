@@ -10,6 +10,8 @@
 <body>
 	<%@ include file="navbar.jsp"%>
 	<br />
+	<a name="top"></a>
+	<a href='<c:url value="/admin/productInventory/addProduct"/>' class="btn btn-primary">Add Product</a>
 	<h3>All Products</h3>
 	
 	<table class="table table-sm ">
@@ -43,7 +45,7 @@
 
 				<tr>
 					<td><img src='<c:url value="/resource/images/${addproduct.id}.png"/>' alt="image" 
-					     style="width:50px;height:20px" /></td>
+					     style="width:83px;height:80px" /></td>
 					<td>${addproduct.productname}</td>
 					<td>${addproduct.manufacturer}</td>
 					<td>${addproduct.description}</td>
@@ -59,6 +61,7 @@
 				</c:forEach>
 		</tbody>
 	</table>
-	<a href='<c:url value="/admin/productInventory/addProduct"/>' class="btn btn-primary">Add Product</a>
+	
+	<a href="#top">Back to top</a>
 </body>
 </html>

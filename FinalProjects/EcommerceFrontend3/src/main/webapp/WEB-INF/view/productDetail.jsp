@@ -18,6 +18,7 @@
 	<%@ include file="navbar.jsp"%>
 	<br/>
 	<h3>All Products</h3>
+	
 	Check out all the awesome product available now!
 	<table  class="table table-sm " >
 	  <thead class="thead-light">
@@ -43,13 +44,16 @@
 				<td> ${addproduct.manufacturer} </td>
 				<td> ${addproduct.price} </td>
 				<%-- <spring:url value="/listProduct/viewProduct/${addproduct.id}" var="url1"></spring:url> --%>
-				
 				<td>
-				<a href="${getid}"><i class="fa fa-info" ></i></a>
+				
+				<a href="${getid}" class="btn btn-outline-success data-toggle="tooltip""><i class="fa fa-info" ></i></a>
+				
                 </td>
+               <security:authorize access="hasRole('USER')">
                 <td>
-                <a href="<c:url value="/cart/add/${addproduct.id}"/>"><i class="fa fa-shopping-cart"></i></a>
+                <a href="<c:url value="/cart/add/${addproduct.id}"/>" class="btn btn-outline-info"><i class="fa fa-shopping-cart"></i></a>
                 </td>
+               </security:authorize> 
 			</tr>
 				</c:forEach>
 			 </tbody>

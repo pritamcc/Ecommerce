@@ -1,11 +1,15 @@
+body{
+	text-decoration: none;
+}
 .footer1 {
-    background: white url("..resource/images/logo2.png") repeat scroll left top;
+    background:  #F04903 url("..resource/images/logo2.png") repeat scroll left top;
 	padding-top: 40px;
 	padding-right: 0;
 	padding-bottom: 20px;
 	padding-left: 0;/*	border-top-width: 4px;
 	border-top-style: solid;
 	border-top-color: #003;*/
+	color:#fff;
 }
 
 .logo{
@@ -13,7 +17,7 @@
      }
 
 .title-widget {
-	color: #898989;
+	color: #fff;
 	font-size: 20px;
 	font-weight: 300;
 	line-height: 1;
@@ -27,13 +31,14 @@
 }
 
 .title-widget::before {
-    background-color: #ea5644;
+    background-color:  #f1c40f;
     content: "";
     height: 22px;
     left: 0px;
     position: absolute;
     top: -2px;
     width: 5px;
+    color:#fff;
 }
 
 
@@ -41,10 +46,10 @@
 .widget_nav_menu ul {
     list-style: outside none none;
     padding-left: 0;
+    
 }
 
 .widget_archive ul li {
-    background-color: rgba(0, 0, 0, 0.3);
     content: "";
     height: 3px;
     left: 0;
@@ -55,26 +60,25 @@
 
 
 .widget_nav_menu ul li {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 700;
     line-height: 20px;
 	position: relative;
-    text-transform: uppercase;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     margin-bottom: 7px;
     padding-bottom: 7px;
 	width:95%;
+	text-decoration: none;
 }
 
 
 
 .title-median {
-    color: #636363;
+    color: black;
     font-size: 20px;
     line-height: 20px;
     margin: 0 0 15px;
-    text-transform: uppercase;
-	font-family: 'Fjalla One', sans-serif;
+    
 }
 
 .footerp p {font-family: 'Gudea', sans-serif; }
@@ -116,7 +120,7 @@
 
 
 .footer-bottom {
-    background-color: #15224f;
+    background-color:black;
     min-height: 30px;
     width: 100%;
 }

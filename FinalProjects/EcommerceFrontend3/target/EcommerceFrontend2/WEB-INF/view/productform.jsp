@@ -25,9 +25,15 @@
 	  method="POST" enctype="multipart/form-data">
 		<table>
 			<tr>
-				<td><label>Product Name:</label></td><form:errors path="productname" cssStyle="color:#ff0000"/>
-				<td><form:input path="productname" class="form-control" /></td>
+				<td>
+				<label>Product Name:</label>
+				</td>
+				<form:errors path="productname" cssStyle="color:#ff0000"/>
+				<td>
+				<form:input path="productname" class="form-control" />
+				</td>
 				&nbsp;&nbsp;
+				
 				<td><label>Manufacturer:</label></td>
 				<td><form:input path="manufacturer" class="form-control" /></td>
 			</tr>

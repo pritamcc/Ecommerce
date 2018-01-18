@@ -40,7 +40,7 @@
 					       </div>
 					</c:if>
 					<div class="form-group">
-						<label class="">User name:</label> <input type="text" id="username"
+						<label class="">User name:</label> <input type="email" id="username"
 							name="username" class="form-control mx-sm-3" required="required"/>
 					</div>
 					<div class="form-group">

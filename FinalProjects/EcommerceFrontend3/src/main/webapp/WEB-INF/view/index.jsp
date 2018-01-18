@@ -11,7 +11,7 @@
 	       <title>Watches</title> 
 	   </head>
 	 <body>
- 
+        
 	<br />
 	 <%@ include file="navbar.jsp"%>
 	 <br> 
@@ -47,7 +47,8 @@
 	</div>
 	<br/>
 <div class="container-fluid" style="background-color: #DFE2DB">
-      
+  
+   
   <div class="row">
     <div class="col">
          <img class="d-block w-100 rounded mx-auto d-block"
@@ -74,5 +75,6 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" ></script>
-	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
 </html>

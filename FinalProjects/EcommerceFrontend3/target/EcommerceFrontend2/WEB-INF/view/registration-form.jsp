@@ -30,11 +30,13 @@
 			<div class="form-row">
 				<div class="form-group col-md-6">
 					<label>First Name</label>
+					<form:errors  path="firstName" cssStyle="color:#ff0000"/>
 					<form:input path="firstName" class="form-control"
 						placeholder="Enter name" />
 				</div>
 				<div class="form-group col-md-6">
 					<label>Last Name</label>
+					<form:errors  path="lastName" cssStyle="color:#ff0000"/>
 					<form:input path="lastName" class="form-control"
 						placeholder="Last name" />
 				</div>
@@ -46,7 +48,8 @@
 				</div>
 				<div class="form-group col-md-6">
 					<label>Contact</label>
-					<form:input path="shippingAddress.address" class="form-control"
+					<form:errors  path="customerPhone" cssStyle="color:#ff0000"/>
+					<form:input path="customerPhone" class="form-control"
 						placeholder="" />
 				</div>
 			</div>
@@ -55,18 +58,21 @@
 			
 			<div class="form-group">
 				<label>Address</label>
-				<form:input path="shippingAddress.address" class="form-control"
+				<form:errors path="shippingAddress.address" cssStyle="color:#ff0000"/>
+				<form:textarea path="shippingAddress.address" class="form-control"
 					placeholder="Address" />
 			</div>
 
 			<div class="form-row">
 				<div class="form-group col-md-6">
 					<label>City</label>
+					<form:errors path="shippingAddress.city" cssStyle="color:#ff0000"/>
 					<form:input path="shippingAddress.city" class="form-control"
 						placeholder="City" />
 				</div>
 				<div class="form-group col-md-6">
 					<label>State</label>
+					<form:errors path="shippingAddress.state" cssStyle="color:#ff0000"/>
 					<form:input path="shippingAddress.state" class="form-control"
 						placeholder="State" />
 				</div>
